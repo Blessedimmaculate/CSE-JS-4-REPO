@@ -10,13 +10,23 @@ const studentSchema = new mongoose.Schema({
         type: String,
         trim: true,
     },
-    age: {
-        type: Number,
+    phoneNumber: {
+        type: String,
         trim: true,
     },
-    sex:{
+    email:{
         type: String,
         trim:true,
+    },
+    gender: {
+        type: String,
+        required: true,
+        default: "Male",
+        enum: ["Male", "Female"]
+    },
+    isSponsored: {
+        type: Boolean,
+        required: false
     },
 })
 
