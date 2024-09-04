@@ -44,7 +44,7 @@ router.get("/:id", async (req, res) => {
 })
 
 // UPDATE A STUDENT
-router.post("/", async (req, res) => {
+router.put("/:id", async (req, res) => {
   const {id} = req.params // destructured req body object to id 
   updates = {...req.body} // spreading
   try{
@@ -59,7 +59,7 @@ router.post("/", async (req, res) => {
 })
 
 // DELETE A STUDENT
-
+// asignment
 
 module.exports = router;
 
