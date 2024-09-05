@@ -6,8 +6,8 @@ const app = express();
 
 // database configuration
 mongoose.connect(mongoUri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
+  // useNewUrlParser: true,
+  // useUnifiedTopology: true,
 });
 
 mongoose.connection

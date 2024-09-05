@@ -59,6 +59,23 @@ router.put("/:id", async (req, res) => {
 })
 
 // DELETE A STUDENT
+router.delete('/:id', async (req,res)=>{
+  const {id} = req.params
+  try{ 
+    const deleted = await Student.findByIdAndDelete(id);
+    console.log(deleted);
+    if(deleted==null) {
+      res.status(404).json({message: 'Not Found'})
+      return null
+    }
+    if(!deleted) throw Error('Something went wrong!')
+    res.status(200).json(deleted)
+  }
+  
+    catch(error){
+        res.status(500).json({message: error.message})
+    }
+})
 // asignment
 
 module.exports = router;
