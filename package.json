@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "install": "npm install && npm install --prefix views",
+    "server": "nodemon server.js --ignore 'views/'",
+    "vue": "npm run dev --prefix views",
+    "dev": "concurrently \"npm run server\" \"npm run vue\"",
+    "build": "npm install && npm install --prefix views && npm run build --prefix views",
+    "start": "node server.js"
+    
   },
   "keywords": [],
   "author": "",
