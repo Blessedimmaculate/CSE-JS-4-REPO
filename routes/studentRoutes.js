@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 // import modal and store in a variable
-const Student = require("../models/student");
+const Student = require("../models/student");    // /student
 
 // READ - getting all students from db
 router.get("/", async (req, res) => {
@@ -76,7 +76,7 @@ router.delete('/:id', async (req,res)=>{
         res.status(500).json({message: error.message})
     }
 })
-// asignment
+
 
 module.exports = router;
 
